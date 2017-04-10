@@ -6,11 +6,7 @@ export default class ComponentHeader extends React.Component {
 			miniHeader: false
 		};
 	};
-	switchHeader() {
-		this.setState({
-			miniHeader: !this.state.miniHeader
-		});
-	};
+
 	render() {
 		const styleComponentHeader = {
 			header: {
@@ -21,7 +17,7 @@ export default class ComponentHeader extends React.Component {
 			}
 		}
 		return (
-			<header style={styleComponentHeader.header} onClick = {this.switchHeader.bind(this)}>
+			<header style={styleComponentHeader.header} >
 				<h1>这里是头部</h1>
 			</header>
 		)

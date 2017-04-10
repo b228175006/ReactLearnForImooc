@@ -4,7 +4,7 @@ import ComponentHeader from './components/header';
 import ComponentFooter from './components/footer';
 import BodyIndex from './components/bodyIndex';
 
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 
 class Index extends React.Component {
 	render() {
@@ -18,5 +18,3 @@ class Index extends React.Component {
 		)
 	}
 }
-
-ReactDOM.render(<Index/>, document.getElementById('example'));

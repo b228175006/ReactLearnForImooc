@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
 	context: __dirname + '/src/',
-	entry: "./js/index.js",
+	entry: "./js/root.js",
 	module: {
 		loaders: [{ //JS的处理loader
 			test: /\.js?$/,
@@ -11,7 +11,10 @@ module.exports = {
 			loader: 'babel-loader',
 			query: {
 				presets: ['react', 'es2015'],
-				plugins: ['react-html-attrs'] //组件的插件配置
+				plugins: ['react-html-attrs', ["import", {
+						libraryName: "antd",
+						style: "css"
+					}]] //组件的插件配置
 			}
 		}, { //CSS的处理loader
 			test: /\.css$/,

@@ -1058,6 +1058,11 @@ body .markdown-body
 <li><a href="#antdesign">AntDesign样式框架</a></li>
 </ul>
 </li>
+<li><a href="#react-router">React Router</a><ul>
+<li><a href="#_13">概念</a></li>
+<li><a href="#_14">参数传递</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1437,4 +1442,40 @@ export default class ComponentFooter extends React.Component {
 <li>使用<br />
 webpack.config.js的cssLoader变更回style-loader!css-loader</li>
 </ul>
+<hr />
+<h2 id="react-router"><a name="user-content-react-router" href="#react-router" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>React Router</h2>
+<h3 id="_13"><a name="user-content-_13" href="#_13" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>概念</h3>
+<ul>
+<li>用来管理页面之间的跳转和路由关系</li>
+<li>sudo npm install &ndash;save react-router </li>
+<li>建立根入口文件root.js,引入Index组件和ReactRouter<br />
+<pre><code>import React from 'react';
+import ReactDOM from 'react-dom';
+import Index from './index';
+import {
+    Router,
+    Route,
+    hashHistory
+} from 'react-route';
+
+export default class Root extends React.Component {
+    render() {
+        return (
+            &lt;Router history={hashHistory}&gt; 
+                &lt;Route component={Index} path=&quot;/&quot;&gt;&lt;/Route&gt; //component={组件}，path=“路径”
+                &lt;Route component={List} path=&quot;list&quot;&gt;&lt;/Route&gt;
+            &lt;/Router&gt;
+        );
+    }
+}
+
+
+ReactDOM.render(&lt;Root/&gt;, document.getElementById('example'));
+</code></pre></li>
+<li>package.json，webpack.config.js 内的入口也改为root</li>
+<li>link<br />
+<pre><code>&lt;Link to='path'&gt;&lt;/Link&gt;
+</code></pre></li>
+</ul>
+<h3 id="_14"><a name="user-content-_14" href="#_14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>参数传递</h3>
 <hr /></article></body></html>

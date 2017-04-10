@@ -2,7 +2,7 @@
   "name": "imooc",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "root.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,7 @@
   "dependencies": {
     "antd": "^2.9.1",
     "babel-loader": "^6.4.1",
+    "babel-plugin-import": "^1.1.1",
     "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
@@ -19,6 +20,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-mixin": "^2.0.2",
+    "react-router": "^4.0.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"

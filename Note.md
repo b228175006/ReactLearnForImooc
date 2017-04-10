@@ -401,3 +401,41 @@ export default class ComponentFooter extends React.Component {
 webpack.config.js的cssLoader变更回style-loader!css-loader
 ***
 
+## React Router
+### 概念
+* 用来管理页面之间的跳转和路由关系
+* sudo npm install --save react-router 
+* 建立根入口文件root.js,引入Index组件和ReactRouter
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Index from './index';
+import {
+    Router,
+    Route,
+    hashHistory
+} from 'react-route';
+
+export default class Root extends React.Component {
+    render() {
+        return (
+            <Router history={hashHistory}> 
+                <Route component={Index} path="/"></Route> //component={组件}，path=“路径”
+                <Route component={List} path="list"></Route>
+            </Router>
+        );
+    }
+}
+
+
+ReactDOM.render(<Root/>, document.getElementById('example'));
+```
+* package.json，webpack.config.js 内的入口也改为root
+* link
+```
+<Link to='path'>text</Link>
+```
+
+### 参数传递
+***
+
