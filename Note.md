@@ -395,5 +395,9 @@ export default class ComponentFooter extends React.Component {
 ### JSX样式与CSS的互转
 * [CSS TO REACT 工具](http://staxmanade.com/CssToReact/)
 
+### AntDesign样式框架
+* [AntDesign](https://ant.design/index-cn)
+* 使用
+webpack.config.js的cssLoader变更回style-loader!css-loader
 ***
 

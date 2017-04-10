@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import ReactMixin from 'react-mixin';
 import BodyChild from './bodyChild';
 import MixinLog from './mixins.js';
+import {
+	Input
+} from 'antd';
 export default class BodyIndex extends React.Component {
 
 	componentWillMount() {
@@ -24,7 +27,7 @@ export default class BodyIndex extends React.Component {
 		});
 		// var mySubmitButton = document.getElementById('mySubmitButton');
 		// ReactDOM.findDOMNode(mySubmitButton).style.color = 'red';
-		this.refs.submitBtn.style.color = 'red';
+		// this.refs.submitBtn.style.color = 'red';
 		MixinLog.log();
 	}
 	handleChildValueChange(event) {
@@ -46,12 +49,13 @@ export default class BodyIndex extends React.Component {
 		return (
 			<div>
 				<h2>这里是页面主体内容</h2>
+				<Input placeholder="Basic usage" />
 				<p>{usreName==''?'用户还没登录':'用户名:'+usreName}</p>
-				<p><input type="button" value={usreName} disabled={boolInput}/></p>
+				<p><Input type="button" value={usreName} disabled={boolInput}/></p>
 				{/*注释*/}
 				<p>{this.state.userName} {this.props.userId}</p>
 				<p>{this.state.age}</p>
-				<input id='mySubmitButton' ref="submitBtn" type="button" value="changeAge" onClick={this.changeAgeInfo.bind(this)}/>
+				<Input id='mySubmitButton' ref="submitBtn" type="button" value="changeAge" onClick={this.changeAgeInfo.bind(this)}/>
 				<BodyChild {...this.props} handleChildValueChange={this.handleChildValueChange.bind(this)}/>
 			</div>
 		)
