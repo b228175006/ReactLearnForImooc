@@ -1474,8 +1474,21 @@ ReactDOM.render(&lt;Root/&gt;, document.getElementById('example'));
 </code></pre></li>
 <li>package.json，webpack.config.js 内的入口也改为root</li>
 <li>link<br />
-<pre><code>&lt;Link to='path'&gt;&lt;/Link&gt;
+<pre><code>&lt;Link to='path'&gt;text&lt;/Link&gt;
 </code></pre></li>
 </ul>
 <h3 id="_14"><a name="user-content-_14" href="#_14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>参数传递</h3>
+<ul>
+<li>在 Route的path中定义参数名<br />
+<pre><code>&lt;Route component={List} path=&quot;list/:id&quot;&gt;&lt;/Route&gt;
+</code></pre></li>
+<li>在List中接收<br />
+<pre><code>...
+return(
+    &lt;div&gt;
+        &lt;h2&gt;传入参数为：{this.props.params.id}&lt;/h2&gt;
+    &lt;/div&gt;
+    );
+</code></pre></li>
+</ul>
 <hr /></article></body></html>

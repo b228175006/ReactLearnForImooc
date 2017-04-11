@@ -437,5 +437,18 @@ ReactDOM.render(<Root/>, document.getElementById('example'));
 ```
 
 ### 参数传递
+* 在 Route的path中定义参数名
+```
+<Route component={List} path="list/:id"></Route>
+```
+* 在List中接收
+```
+...
+return(
+    <div>
+        <h2>传入参数为：{this.props.params.id}</h2>
+    </div>
+    );
+```
 ***
 

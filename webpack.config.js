@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
 	context: __dirname + '/src/',
-	entry: "./js/root.js",
+	entry: "./js/index.js",
 	module: {
 		loaders: [{ //JS的处理loader
 			test: /\.js?$/,

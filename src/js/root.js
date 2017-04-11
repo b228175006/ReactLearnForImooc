@@ -13,11 +13,7 @@ export default class Root extends React.Component {
 		return (
 			<Router history={hashHistory}>
 				<Route path="/" component={Index}/>
-				<Route component={ComponentList} path="list"></Route>
 			</Router>
 		);
 	}
 }
-
-
-ReactDOM.render(<Root/>, document.getElementById('example'));
