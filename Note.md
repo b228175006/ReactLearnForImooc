@@ -452,3 +452,20 @@ return(
 ```
 ***
 
+## 适配移动端
+### 组件
+* react-responsive
+* npm install --save react-responsive        安装
+* import MediaQuery from 'react-responsive'; 引入
+* 使用
+```
+//设备的宽度为1224px以上时，加载PC的组件
+<MediaQuery query='(min-device-width:1224px)'>
+    <PCHeader/>
+</MediaQuery>
+//设备的宽度为1224px以下时，加载移动组件
+<MediaQuery query='(max-device-width:1224px)'>
+    <MobileHeader/>
+</MediaQuery>
+```
+

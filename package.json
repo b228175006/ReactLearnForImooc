@@ -21,7 +21,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-mixin": "^2.0.2",
-    "react-router": "^2.8.1",
+    "react-router-dom": "^4.0.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
