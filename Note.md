@@ -469,3 +469,6 @@ return(
 </MediaQuery>
 ```
 
+##fetch 框架（网络请求）
+* sudo npm install fetch --save
+* 
