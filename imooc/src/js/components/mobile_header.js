@@ -35,6 +35,15 @@ class MobileHeader extends React.Component {
 			userid: 0
 		}
 	};
+	componentWillMount() {
+		if (localStorage.userid != '') {
+			this.setState({
+				hasLogined: true,
+				userNickName: localStorage.userNickName,
+				userid: localStorage.userid
+			});
+		}
+	};
 	setModalVisible(value) {
 		this.setState({
 			modalVisible: value
@@ -66,6 +75,8 @@ class MobileHeader extends React.Component {
 				userNickName: json.NickName,
 				userid: json.UserId
 			});
+			localStorage.userid = json.UserId;
+			localStorage.userNickName = json.NickUserName;
 		});
 		if (this.state.action == 'login') {
 			this.setState({
@@ -88,6 +99,13 @@ class MobileHeader extends React.Component {
 				action: "register"
 			})
 		}
+	};
+	logout() {
+		localStorage.userid = '';
+		localStorage.userNickName = '';
+		this.setState({
+			hasLogined: false
+		});
 	};
 	render() {
 		const {
