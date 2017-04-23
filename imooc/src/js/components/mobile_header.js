@@ -97,7 +97,7 @@ class MobileHeader extends React.Component {
 												<Input type="password"  placeholder="请输入您的密码" />
 												)}
 										</FormItem>
-										<FormItem label="确认默默">
+										<FormItem label="确认密码">
 											{getFieldDecorator('r_confirmPassword')(
 												<Input type="password" placeholder="请再次输入您的密码" />
 												)}
