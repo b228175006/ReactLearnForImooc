@@ -471,4 +471,13 @@ return(
 
 ##fetch 框架（网络请求）
 * sudo npm install fetch --save
-* 
+```
+var url = "http://newsapi.gugujiankong.com/Handler.ashx?action=register&username=" + formData.userName + "&password=" + formData.password + "&r_userName=" + formData.r_userName + "&r_password=" + formData.r_password + "&r_confirmPassword=" + formData.r_confirmPassword;
+
+fetch(url, myFetchOptions).then(response => response.json()).then(json => {
+    this.setState({
+        userNickName: json.NickName,
+        userid: json.UserId
+    });
+});
+```
