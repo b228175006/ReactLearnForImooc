@@ -472,6 +472,7 @@ return(
 ##fetch 框架（网络请求）
 * sudo npm install fetch --save
 ```
+//ES6
 var url = "http://newsapi.gugujiankong.com/Handler.ashx?action=register&username=" + formData.userName + "&password=" + formData.password + "&r_userName=" + formData.r_userName + "&r_password=" + formData.r_password + "&r_confirmPassword=" + formData.r_confirmPassword;
 
 fetch(url, myFetchOptions).then(response => response.json()).then(json => {
@@ -479,5 +480,19 @@ fetch(url, myFetchOptions).then(response => response.json()).then(json => {
         userNickName: json.NickName,
         userid: json.UserId
     });
+});
+
+
+//ES5
+var myRequest = new Request('http://api.com/products.json');
+
+fetch(myRequest).then(function(response) {
+  return response.json().then(function(json) {
+    for(i = 0; i < json.products.length; i++) {
+      var name = json.products[i].Name;
+      var price = json.products[i].Price;
+      // do something more...
+    }
+  });
 });
 ```
