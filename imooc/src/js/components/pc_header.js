@@ -67,10 +67,8 @@ class PCHeader extends React.Component {
 			method: 'GET'
 		};
 		var formData = this.props.form.getFieldsValue();
-		console.log(formData);
 		var url = "http://newsapi.gugujiankong.com/Handler.ashx?action=" + this.state.action + "&username=" + formData.userName + "&password=" + formData.password + "&r_userName=" + formData.r_userName + "&r_password=" + formData.r_password + "&r_confirmPassword=" + formData.r_confirmPassword;
 		fetch(url, myFetchOptions).then(response => response.json()).then(json => {
-			console.log(json);
 			this.setState({
 				userNickName: json.NickUserName,
 				userid: json.UserId
