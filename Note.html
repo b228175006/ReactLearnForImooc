@@ -1067,6 +1067,7 @@ body .markdown-body
 <li><a href="#_16">组件</a></li>
 </ul>
 </li>
+<li><a href="#fetch">fetch 框架（网络请求）</a></li>
 </ul>
 </li>
 </ul>
@@ -1502,4 +1503,42 @@ return(
 <li>react-responsive</li>
 <li>npm install &ndash;save react-responsive        安装</li>
 <li>import MediaQuery from &lsquo;react-responsive&rsquo;; 引入</li>
+<li>使用<br />
+<pre><code>//设备的宽度为1224px以上时，加载PC的组件
+&lt;MediaQuery query='(min-device-width:1224px)'&gt;
+    &lt;PCHeader/&gt;
+&lt;/MediaQuery&gt;
+//设备的宽度为1224px以下时，加载移动组件
+&lt;MediaQuery query='(max-device-width:1224px)'&gt;
+    &lt;MobileHeader/&gt;
+&lt;/MediaQuery&gt;
+</code></pre></li>
+</ul>
+<h2 id="fetch"><a name="user-content-fetch" href="#fetch" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fetch 框架（网络请求）</h2>
+<ul>
+<li>sudo npm install fetch &ndash;save<br />
+<pre><code>//ES6
+var url = &quot;http://newsapi.gugujiankong.com/Handler.ashx?action=register&amp;username=&quot; + formData.userName + &quot;&amp;password=&quot; + formData.password + &quot;&amp;r_userName=&quot; + formData.r_userName + &quot;&amp;r_password=&quot; + formData.r_password + &quot;&amp;r_confirmPassword=&quot; + formData.r_confirmPassword;
+
+fetch(url, myFetchOptions).then(response =&gt; response.json()).then(json =&gt; {
+    this.setState({
+        userNickName: json.NickName,
+        userid: json.UserId
+    });
+});
+
+
+//ES5
+var myRequest = new Request('http://api.com/products.json');
+
+fetch(myRequest).then(function(response) {
+  return response.json().then(function(json) {
+    for(i = 0; i &lt; json.products.length; i++) {
+      var name = json.products[i].Name;
+      var price = json.products[i].Price;
+      // do something more...
+    }
+  });
+});
+</code></pre></li>
 </ul></article></body></html>
