@@ -21,14 +21,14 @@ import {
 	Link,
 	browserHistory
 } from 'react-router';
-import PCHeader from './pc_header';
-import PCFooter from './pc_footer';
+import MobileHeader from './mobile_header';
+import MobileFooter from './mobile_footer';
 const FormItem = Form.Item;
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 const TabPane = Tabs.TabPane;
 
-class PCUserConter extends React.Component {
+class MobileUserConter extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -64,11 +64,10 @@ class PCUserConter extends React.Component {
 		};
 		return (
 			<div>
-				<PCHeader />
+				<MobileHeader />
 				<Row>
-					<Col span={2}></Col>
-					<Col span={20}>
-					<Tabs tabPosition="left" type="card">
+					<Col span={24}>
+					<Tabs type="card">
 						<TabPane tab="我的收藏列表" key="1">
 							
 						</TabPane>
@@ -81,20 +80,19 @@ class PCUserConter extends React.Component {
 									<Icon type="plus" />
 									<div className="ant-upload-text">上传照片</div>
 								</Upload>
-								<Modal visible={this.state.previewVisible} footer={null} onCancel={this.handleCancel.bind(this)}>
+								<Modal visible={this.state.previewVisible} footer={null} onCancel={this.handleCancel.bind(this)} >
 									<img src={this.state.previewImage} alt="预览" style={{ width: '100%' }}/>
 								</Modal>
 							</div>
 						</TabPane>
 					</Tabs>
 					</Col>
-					<Col span={2}></Col>
 				</Row>
-				<PCFooter />
+				<MobileFooter />
 
 			</div>
 
 		);
 	};
 }
-export default PCUserConter = Form.create()(PCUserConter);
+export default MobileUserConter = Form.create()(MobileUserConter);
