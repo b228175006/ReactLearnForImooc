@@ -46,8 +46,8 @@ export default class MobileNewsDetails extends React.Component {
 						</Col>
 					</Row>
 					<MobileFooter />
-					<BackTop />
 				</div>
+				<BackTop />
 			</div>
 		);
 	};

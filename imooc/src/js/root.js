@@ -6,6 +6,7 @@ import PCIndex from './components/pc_index';
 import PCNewsDetails from './components/pc_news_details';
 import MobileIndex from './components/mobile_index';
 import MobileNewsDetails from './components/mobile_news_details';
+import PCUserConter from './components/pc_usercenter';
 
 import {
 	Router,
@@ -24,12 +25,13 @@ export default class Root extends React.Component {
 					<Router history = {hashHistory}>
 						<Route path="/" component = {PCIndex}></Route>
 						<Route path="/details/:uniquekey" component = {PCNewsDetails}></Route>
+						<Route path="/usercenter" component = {PCUserConter}></Route>
 					</Router>
 				</MediaQuery>
 				<MediaQuery query="(max-device-width:1224px)">
 					<Router history = {hashHistory}>
 						<Route path="/" component = {MobileIndex}></Route>
-						<Route path="/details/:uniquekey" component = {MobileNewsDetails}></Route>
+						<Route path="/details/:uniquekey" component = {PCUserConter}></Route>
 					</Router>
 				</MediaQuery>
 			</div>

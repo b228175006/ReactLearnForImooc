@@ -10,7 +10,8 @@ import {
 	Form,
 	Modal,
 	Button,
-	Checkbox
+	Checkbox,
+	notification
 } from 'antd';
 import {
 	Router,
@@ -51,6 +52,18 @@ class CommonComments extends React.Component {
 			this.componentDidMount();
 		})
 	};
+	addUserCollection() {
+		var myFetchOptions = {
+			method: 'GET'
+		};
+		fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid=" + localStorage.userid + "&uniquekey=" + this.props.uniquekey, myFetchOptions).then(response => response.json()).then(json => {
+			//收藏成功以后进行一下全局的提醒
+			notification['success']({
+				message: 'ReactNews提醒',
+				description: '收藏此文章成功'
+			});
+		});
+	};
 	render() {
 		const {
 			getFieldDecorator
@@ -76,6 +89,8 @@ class CommonComments extends React.Component {
 									)}
 							</FormItem>
 							<Button type="primary" htmlType="submit">提交评论</Button>
+							&nbsp;&nbsp;
+							<Button type="primary" htmlType="button" onClick={this.addUserCollection.bind(this)}>收藏该文章</Button>
 						</Form>
 					</Col>
 				</Row>
